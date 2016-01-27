@@ -1,9 +1,9 @@
 var coorde = $("body").find(".tactile-timemachine__preview-background-thumbnail").attr("src");
 
 var c0 = coorde.indexOf('panoid=');
-var c=coorde.indexOf('panoid=',-7);
+var c=coorde.indexOf('',c0);
 var L0 = coorde.indexOf('&w=');
-var L = coorde.indexOf('&w=',-3);
+var L = coorde.indexOf('',L0);
 var pano = coorde.slice(c,L);
 
 var c20 = coorde.indexOf('pitch=');
