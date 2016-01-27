@@ -13,4 +13,4 @@ console.log(pano,pitch);
 
 
 $("<div id='popup' style='background:white;width:500;height:800;position:fixed'></div>").appendTo("body");
-$("#popup").append("<img src='http://maps.googleapis.com/maps/api/streetview?size=300x300&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/>")
+$("#popup").append("<img src='http://maps.googleapis.com/maps/api/streetview?size=300x300&location=&fov=&heading=&pitch="+pitch+"&pano="+pano+"'/>")
