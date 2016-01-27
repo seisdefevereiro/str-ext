@@ -2,10 +2,12 @@ var imagem = document.getElementsByClassName("tactile-timemachine__preview-backg
 var coorde = imagem.src;
 
 var c0 = coorde.indexOf('panoid=');
-var c=coorde.indexOf(coorde.charAt(c0+8));
+var c=coorde.indexOf(coorde.charAt(c0));
 var L = coorde.indexOf('&w=');
 var pano = coorde.slice(c,L);
 
+
+    
 var c20 = coorde.indexOf('pitch=');
 var c2=coorde.indexOf('pitch=',c20-6);
 var L20 = coorde.indexOf('&ll');
