@@ -1,5 +1,5 @@
-var imagem = document.getelementsbyclassname("tactile-timemachine__preview-background-thumbnail");
-var coorde = imagem[0].src;
+var imagem = document.getElementsByClassName("tactile-timemachine__preview-background-thumbnail")[0];
+var coorde = imagem.src;
 
 var c0 = coorde.indexOf('panoid=');
 var c=coorde.indexOf(1,c0);
