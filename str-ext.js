@@ -28,7 +28,8 @@ var ll = coorde2.substring(c5+2,L5);
 
 console.log(pano,pitch,heading,fov,ll);
 
-document.body.innerHTML += "<div id='popup' style='background:white;width:500px;height:800px;position:absolute;right:0'></div>";
+var amen = document.getElementsByTagName("jsl");
+document.amen.innerHTML += "<div id='popup' style='background:white;width:500px;height:800px;position:absolute;right:0'></div>";
 document.getElementById("popup").innerHTML = "<img id='rosa' src='//maps.googleapis.com/maps/api/streetview?size=500x500&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/>";
 
 imagem.onchange = (function() { 
