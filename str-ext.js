@@ -31,3 +31,5 @@ new MutationObserver(function (mutations) {
     subtree: true
 });
 
+var amen = document.getElementsByClassName("tactile-timemachine__dropdown-container");
+amen.innerHTML += "<div id='popup' style='background:white;width:10px;height:10px;position:absolute;'></div>";
