@@ -1,4 +1,5 @@
-var coorde = $("body").find(".tactile-timemachine__preview-background-thumbnail").attr("src");
+var imagem = document.getelementsbyclassname("tactile-timemachine__preview-background-thumbnail");
+var coorde = imagem[0].src;
 
 var c0 = coorde.indexOf('panoid=');
 var c=coorde.indexOf(1,c0);
@@ -35,6 +36,5 @@ var ll = coorde2.slice(c5,L5);
 
 console.log(pano,pitch,heading,fov,ll);
 
-
-$("<div id='popup' style='background:white;width:500px;height:800px;position:fixed'></div>").appendTo("body");
-$("#popup").append("<img src='//maps.googleapis.com/maps/api/streetview?size=300x300&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/>")
+document.body.innerHTML += "<div id='popup' style='background:white;width:500px;height:800px;position:fixed'></div>";
+document.getElementById("popup").innerHTML = "<img src='//maps.googleapis.com/maps/api/streetview?size=300x300&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/>";
