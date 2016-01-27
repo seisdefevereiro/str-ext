@@ -33,6 +33,7 @@ var L50 = coorde2.indexOf(',3a');
 var L5=coorde2.indexOf(',3a',L50-3);
 var ll = coorde2.slice(c5,L5);
 
+
 console.log(pano,pitch,heading,fov,ll);
 
 document.body.innerHTML += "<div id='popup' style='background:white;width:500px;height:800px;position:fixed'></div>";
