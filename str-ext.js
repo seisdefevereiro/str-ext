@@ -11,7 +11,24 @@ new MutationObserver(function (mutations) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'src') {
             console.log(mutation);
             console.log('Old src: ', mutation.oldValue);
-            versions.push(mutation.target.src);
+            
+            
+            
+
+
+function add(name) {
+    var found = versions.some(function (el) {
+      return el === name;
+    });
+    if (!found) {
+        versions.push(name);
+    }
+}
+
+add(mutation.target.src);
+
+
+
             console.log('New src: ', mutation.target.src);
             console.log(versions);
             return true;
