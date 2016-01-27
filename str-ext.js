@@ -1,18 +1,14 @@
 var imagem = document.getElementsByClassName("tactile-timemachine__preview-background-thumbnail")[0];
 var coorde = imagem.src;
 
-var c0 = coorde.indexOf('panoid=');
-var c=coorde.indexOf(coorde.charAt(c0));
+var c = coorde.indexOf('panoid=');
 var L = coorde.indexOf('&w=');
-var pano = coorde.slice(c,L);
+var pano = coorde.substring(c+7,L);
 
 
-    
-var c20 = coorde.indexOf('pitch=');
-var c2=coorde.indexOf('pitch=',c20-6);
-var L20 = coorde.indexOf('&ll');
-var L2=coorde.indexOf('&ll',L20-3);
-var pitch = coorde.slice(c2,L2);
+var c2 = coorde.indexOf('pitch=');
+var L2 = coorde.indexOf('&ll');
+var pitch = coorde.substring(c2+6,L2);
 
 var c30 = coorde.indexOf('&yaw=');
 var c3=coorde.indexOf('&yaw=',c30-5);
