@@ -64,3 +64,18 @@ var amen = document.getElementsByClassName("widget-titlecard")[0];
 amen.innerHTML += "<div id='popup' style='background:white;text-align:center;overflow:auto;width:500px;height:700px;position:fixed;top:15px;right:15px'><p id='jqueryteste'>Jquery</p></div>";
 
 $("#jqueryteste").css("background","yellow");
+$('.tactile-timemachine__scrubber').on("mousedown mouseup", function(e) {
+    $('#jqueryteste').text($('#jqueryteste').text() + (e.type + " event fired at coords: " + e.pageX + ", " + e.pageY));
+});
+
+    x_coord = 1;
+    y_coord = 1;
+    var circle = $('.tactile-timemachine__scrubber').offset();
+    var qq = circle.left; var nn = circle.top;
+    var e = jQuery.Event( "mousedown", { pageX: circle.left+5, pageY: circle.top+5 } );
+    $('.tactile-timemachine__scrubber').trigger(e);
+
+    // execute more code
+
+    var e = jQuery.Event( "mouseup", { pageX: qq+200, pageY: nn+200 } );
+    $('.tactile-timemachine__scrubber').trigger(e);
