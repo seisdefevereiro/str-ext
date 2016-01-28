@@ -61,5 +61,6 @@ document.getElementById("popup").innerHTML += "<img class='rosa' src='//maps.goo
 });
 
 var amen = document.getElementsByClassName("widget-titlecard")[0];
-amen.innerHTML += "<div id='popup' style='background:white;text-align:center;overflow:auto;width:500px;height:700px;position:fixed;top:15px;right:15px'></div>";
+amen.innerHTML += "<div id='popup' style='background:white;text-align:center;overflow:auto;width:500px;height:700px;position:fixed;top:15px;right:15px'><p id='jqueryteste'>Jquery</p></div>";
 
+$("#jqueryteste").css("background","yellow");
