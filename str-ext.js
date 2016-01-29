@@ -61,5 +61,5 @@ document.getElementById("popup").innerHTML += "<img class='rosa' style='margin:7
 });
 
 var amen = document.getElementsByClassName("widget-titlecard")[0];
-amen.innerHTML += "<div id='popup' style='background:white;text-align:center;overflow:auto;width:1100px;height:850px;position:fixed;top:15px;right:15px'><p id='jqueryteste'>Jquery</p></div>";
+amen.innerHTML += "<div id='popup' style='background:white;text-align:center;overflow:auto;width:1100px;height:850px;position:fixed;top:15px;right:15px'><button id='drag-n-dropd'>Simulate drag-n-drop</button></div>";
 
