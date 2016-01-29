@@ -4,7 +4,7 @@ var coorde = imagem.src;
 versions.push(coorde);
 
 function loadimages(){
-    var coorde = name;
+
 
 var c = coorde.indexOf('panoid=');
 var L = coorde.indexOf('&w=');
@@ -44,7 +44,7 @@ new MutationObserver(function (mutations) {
                 if (!found) {
                     versions.push(name);
                     
-                    
+    var coorde = name;
 loadimages();
 
                     console.log(versions);
