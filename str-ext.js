@@ -76,7 +76,7 @@ loadimages();
 });
 
 var amen = document.getElementsByClassName("widget-titlecard")[0];
-amen.innerHTML += "<div id='popup' style='background:white;text-align:center;overflow:auto;width:100%;height:100%;position:fixed;top:15px;right:15px,left:15px'></div>";
+amen.innerHTML += "<div id='mirror' style='overflow:auto;width:100%;height:100%;position:fixed;top:0;right:0,left:0;padding: 25px'><div id='popup' style='background:white;text-align:center;overflow:auto;width:100%;height:100%;position:fixed;top:0;right:0,left:0'></div></div>";
 
 loadimages();
 
