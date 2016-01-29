@@ -130,6 +130,6 @@ var dispatchHTMLMouseEvent = function(mouseEventType, coords, target) {
 };
 
 var i = 1;
-var element = document.getElementsByClassName(".tactile-timemachine__scrubber")[0];
+var element = document.getElementsByClassName("tactile-timemachine__scrubber")[0];
 dispatchHTMLMouseEvent("mousedown", dragPoints[0], element);
 sendMouseDrag(element, dragPoints);
