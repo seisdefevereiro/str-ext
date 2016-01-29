@@ -38,7 +38,7 @@ var c5 = coorde2.indexOf('/@');
 var L5 = coorde2.indexOf(',3a');
 var ll = coorde2.substring(c5+2,L5);
                     
-document.getElementById("popup").innerHTML += "<img class='rosa' style='margin:70px' src='//maps.googleapis.com/maps/api/streetview?size=450x250&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><br>";
+document.getElementById("popup").innerHTML += "<img class='rosa' style='margin:70px' src='//maps.googleapis.com/maps/api/streetview?size=640x450&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><br>";
 }
 
 
@@ -76,7 +76,7 @@ loadimages();
 });
 
 var amen = document.getElementsByClassName("widget-titlecard")[0];
-amen.innerHTML += "<div id='popup' style='background:white;text-align:center;overflow:auto;width:1100px;height:850px;position:fixed;top:15px;right:15px'></div>";
+amen.innerHTML += "<div id='popup' style='background:white;text-align:center;overflow:auto;width:100%;height:100%;position:fixed;top:15px;right:15px,left:15px'></div>";
 
 loadimages();
 
