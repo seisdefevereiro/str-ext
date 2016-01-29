@@ -3,9 +3,18 @@ var imagem = document.getElementsByClassName("tactile-timemachine__preview-backg
 var coorde = imagem.src;
 versions.push(coorde);
 
+if (document.getElementsByClassName("tactile-timemachine__dropdown-container")[0].style.display === 'none') {
+var evt = new MouseEvent("click", {
+        view: window,
+        bubbles: true,
+        cancelable: true,
+        /* whatever properties you want to give it */
+    }),
+    ele = document.getElementsByClassName("tactile-timemachine__button")[0];
+    ele.dispatchEvent(evt);
+}
+
 function loadimages(){
-
-
 var c = coorde.indexOf('panoid=');
 var L = coorde.indexOf('&w=');
 var pano = coorde.substring(c+7,L);
@@ -95,12 +104,10 @@ var sendMouseDrag = function(element, dragPoints) {
 };
 
 var dispatchHTMLMouseEvent = function(mouseEventType, coords, target) {
-
     var evt = document.createEvent("MouseEvents");
     evt.initMouseEvent(mouseEventType, true, true, window, 0,
     coords[0], coords[1], coords[2], coords[3], false, false, false, false, 0, null);
     target.dispatchEvent(evt);
-
 };
 
 var i = 1;
