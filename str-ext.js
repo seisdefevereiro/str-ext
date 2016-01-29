@@ -44,7 +44,7 @@ new MutationObserver(function (mutations) {
                 if (!found) {
                     versions.push(name);
                     
-    var coorde = name;
+    coorde = name;
 loadimages();
 
                     console.log(versions);
