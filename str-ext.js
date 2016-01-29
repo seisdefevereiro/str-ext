@@ -76,7 +76,7 @@ loadimages();
 });
 
 var amen = document.getElementsByClassName("widget-titlecard")[0];
-amen.innerHTML += "<div id='mirror' style='width:100%;height:100%;position:fixed;box-sizing: border-box;padding: 16px'><div id='popup' style='background:white;text-align:center;overflow:auto;width:calc(100% - 8px);height:calc(100% - 8px)'></div></div>";
+amen.innerHTML += "<div id='mirror' style='top:0;right:0;left:0;width:100%;height:100%;position:fixed;box-sizing: border-box;padding: 16px'><div id='popup' style='background:white;text-align:center;overflow:auto;width:calc(100% - 8px);height:calc(100% - 8px)'></div></div>";
 
 
 loadimages();
