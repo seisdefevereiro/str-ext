@@ -3,18 +3,8 @@ var imagem = document.getElementsByClassName("tactile-timemachine__preview-backg
 var coorde = imagem.src;
 versions.push(coorde);
 
-new MutationObserver(function (mutations) {
-    mutations.some(function(mutation) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'src') {
-            function add(name) {
-                var found = versions.some(function (el) {
-                    return el === name;
-                });
-                if (!found) {
-                    versions.push(name);
-                    
-                    
-var coorde = name;
+function loadimages(){
+    var coorde = name;
 
 var c = coorde.indexOf('panoid=');
 var L = coorde.indexOf('&w=');
@@ -40,6 +30,22 @@ var L5 = coorde2.indexOf(',3a');
 var ll = coorde2.substring(c5+2,L5);
                     
 document.getElementById("popup").innerHTML += "<img class='rosa' style='margin:70px' src='//maps.googleapis.com/maps/api/streetview?size=450x250&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><br>";
+}
+
+loadimages();
+
+new MutationObserver(function (mutations) {
+    mutations.some(function(mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'src') {
+            function add(name) {
+                var found = versions.some(function (el) {
+                    return el === name;
+                });
+                if (!found) {
+                    versions.push(name);
+                    
+                    
+loadimages();
 
                     console.log(versions);
                 }
@@ -65,10 +71,10 @@ amen.innerHTML += "<div id='popup' style='background:white;text-align:center;ove
 
 var dragPoints = [];
 var i = 1;
-while (i<150) {
+while (i<250) {
 dragPoints.push([i,10,i,10]);
 i++
-} while (i>-149) {
+} while (i>-249) {
 dragPoints.push([i,10,i,10]);
 i--
 }
@@ -79,7 +85,7 @@ var sendMouseDrag = function(element, dragPoints) {
     if(i < dragPoints.length-1) {
       setTimeout(function() {
           sendMouseDrag(element, dragPoints);
-      }, 10);
+      }, 1);
     } else {
         dispatchHTMLMouseEvent("mouseup", dragPoints[i], element);
 
