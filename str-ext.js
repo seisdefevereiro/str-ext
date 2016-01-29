@@ -65,10 +65,10 @@ amen.innerHTML += "<div id='popup' style='background:white;text-align:center;ove
 
 var dragPoints = [];
 var i = 1;
-while (i<220) {
+while (i<150) {
 dragPoints.push([i,10,i,10]);
 i++
-} while (i>2) {
+} while (i>-149) {
 dragPoints.push([i,10,i,10]);
 i--
 }
