@@ -38,7 +38,7 @@ var c5 = coorde2.indexOf('/@');
 var L5 = coorde2.indexOf(',3a');
 var ll = coorde2.substring(c5+2,L5);
                     
-document.getElementById("popup").innerHTML += "<img class='rosa' style='margin:70px' src='//maps.googleapis.com/maps/api/streetview?size=640x450&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><br>";
+document.getElementById("popup").innerHTML += "<img class='rosa' style='margin:70px' src='//maps.googleapis.com/maps/api/streetview?size=640x450&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/>";
 }
 
 
