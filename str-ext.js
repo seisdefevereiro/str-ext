@@ -63,49 +63,15 @@ document.getElementById("popup").innerHTML += "<img class='rosa' style='margin:7
 var amen = document.getElementsByClassName("widget-titlecard")[0];
 amen.innerHTML += "<div id='popup' style='background:white;text-align:center;overflow:auto;width:1100px;height:850px;position:fixed;top:15px;right:15px'><button id='drag-n-dropd'>Simulate drag-n-drop</button></div>";
 
-var dragPoints = [
-    [1,10,1,10],
-    [2,10,2,10],
-    [3,10,3,10],
-    [4,10,4,10],
-    [5,10,5,10],
-    [6,10,6,10],
-    [7,10,7,10],
-    [8,10,8,10],
-    [9,10,9,10],
-    [10,10,10,10],
-    [11,10,11,10],
-    [12,10,12,10],
-    [13,10,13,10],
-    [14,10,14,10],
-    [15,10,15,10],
-    [16,10,16,10],
-    [17,10,17,10],
-    [18,10,18,10],
-    [19,10,19,10],
-    [20,10,20,10],
-    [21,10,21,10],
-    [22,10,22,10],
-    [23,10,23,10],
-    [24,10,24,10],
-    [25,10,25,10],
-    [26,10,26,10],
-    [27,10,27,10],
-    [28,10,28,10],
-    [29,10,29,10],
-    [30,10,30,10],
-    [31,10,31,10],
-    [32,10,32,10],
-    [33,10,33,10],
-    [34,10,34,10],
-    [35,10,35,10],
-    [36,10,36,10],
-    [37,10,37,10],
-    [38,10,38,10],
-    [39,10,39,10],
-    [40,10,40,10],
-    [41,10,41,10]
-];
+var dragPoints = [];
+var i = 1;
+while (i<220) {
+dragPoints.push([i,10,i,10]);
+i++
+} while (i>2) {
+dragPoints.push([i,10,i,10]);
+i--
+}
 
 var sendMouseDrag = function(element, dragPoints) {
     dispatchHTMLMouseEvent("mousemove", dragPoints[i], element);
