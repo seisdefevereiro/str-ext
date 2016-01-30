@@ -123,6 +123,7 @@ sendMouseDrag(element, dragPoints);
 
 
 var elem = document.getElementsByClassName('minus');
+console.log(elem);
 for(var i=0; i < elem.length; i++){
     (function () {
         var boxa = elem[i].parentNode.parentNode.parentNode.id;
