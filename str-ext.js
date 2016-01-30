@@ -121,15 +121,20 @@ dispatchHTMLMouseEvent("mousedown", dragPoints[0], element);
 sendMouseDrag(element, dragPoints);
 
 
+function makeItHappenDelegate(e) {
+  return function(){
+      makeItHappen(boxa)
+  }
+}
 
 var elem = document.getElementsByClassName('minus');
 console.log(elem);
 for(var i=0; i < elem.length; i++){
-    (function () {
+
         var boxa = elem[i].parentNode.parentNode.parentNode.id;
         console.log(boxa);
-        elem[i].addEventListener("click", function(){makeItHappen(boxa);}, false);
-    }())
+        elem[i].addEventListener("click", function(){makeItHappenDelegate(boxa);}, false);
+
 }
 function makeItHappen(e){
         var block = document.getElementById(e);
