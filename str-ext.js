@@ -1,4 +1,5 @@
 var versions = [];
+var nenem = 1;
 var imagem = document.getElementsByClassName("tactile-timemachine__preview-background-thumbnail")[0];
 var coorde = imagem.src;
 versions.push(coorde);
@@ -38,7 +39,10 @@ var c5 = coorde2.indexOf('/@');
 var L5 = coorde2.indexOf(',3a');
 var ll = coorde2.substring(c5+2,L5);
                     
-document.getElementById("popup").innerHTML += "<img class='rosa' style='margin:70px' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/>";
+document.getElementById("popup").innerHTML += 
+"<div class='cravo' style='margin:70px'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form><span><input type='button' id='minus"+nenem+"' value='-' onClick='textb"+nenem+".value = (textb"+nenem+".value-1)'><input type='text' id='textb"+nenem+"' name='name' value='20' /><input type='button' value='+' onClick='textb"+nenem+".value = (+textb"+nenem+".value+1)'></span></form></div>";
+nenem++
+        
 }
 
 
