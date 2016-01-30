@@ -134,8 +134,9 @@ for(var i=0; i < elem.length; i+=2){
     }())
 }
 function makeItHappen(e){
-            var value = parseInt(e.getElementsByTagName("input")[1].value);
+        var block = document.getElementById(e);
+            var value = parseInt(block.getElementsByTagName("input")[1].value);
     value=value-1;
-    e.getElementsByTagName("input")[1].value = value;
+    block.getElementsByTagName("input")[1].value = value;
         console.log(value);
 }
