@@ -124,7 +124,7 @@ var element = document.getElementsByClassName("tactile-timemachine__scrubber")[0
 dispatchHTMLMouseEvent("mousedown", dragPoints[0], element);
 sendMouseDrag(element, dragPoints);
 
-elem = document.getElementsByClassName('minus');
+var elem = document.getElementsByClassName('minus');
 for(var i=0; i < elem.length; i+=2){
     (function () {
         var k = i - 1;
