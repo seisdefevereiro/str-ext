@@ -43,10 +43,10 @@ document.getElementById("popup").innerHTML +=
 "<div class='"+keytrana+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' id='minus' value='-'><input type='text' style='width:20px;background:yellow' id='textb' name='name' value='"+fov+"' /><input type='button' value='+' id='plus'></span></form></div>";
 nenem++
 
-document.getElementById(keytrana).getElementsByTagName("input")[0].addEventListener("click", function() {
-    var value = parseInt(document.getElementById(keytrana).getElementsByTagName("input")[1].value);
+document.getElementById(keytrana).getElementsByTagName("form")[0].getElementsByTagName("input")[0].addEventListener("click", function() {
+    var value = parseInt(document.getElementById(keytrana).getElementsByTagName("form")[0].getElementsByTagName("input")[1].value);
     value=value+1;
-    document.getElementById(keytrana).getElementsByTagName("input")[1].value = value;
+    document.getElementById(keytrana).getElementsByTagName("form")[0].getElementsByTagName("input")[1].value = value;
     
         var coorde2 = this.parentNode.getElementsByTagName('img')[0].src;
         var c4 = coorde2.indexOf('a,');
@@ -57,10 +57,10 @@ document.getElementById(keytrana).getElementsByTagName("input")[0].addEventListe
     
 });
 
-document.getElementById(keytrana).getElementsByTagName("input")[2].addEventListener("click", function() {
-    var value = parseInt(document.getElementById(keytrana).getElementsByTagName("input")[1].value);
+document.getElementById(keytrana).getElementsByTagName("form")[0].getElementsByTagName("input")[2].addEventListener("click", function() {
+    var value = parseInt(document.getElementById(keytrana).getElementsByTagName("form")[0].getElementsByTagName("input")[1].value);
     value=value-1;
-    document.getElementById(keytrana).getElementsByTagName("input")[1].value = value;
+    document.getElementById(keytrana).getElementsByTagName("form")[0].getElementsByTagName("input")[1].value = value;
 });
 
 
