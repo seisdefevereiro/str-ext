@@ -125,18 +125,8 @@ dispatchHTMLMouseEvent("mousedown", dragPoints[0], element);
 sendMouseDrag(element, dragPoints);
 
 
-
-var dik = document.getElementById("dispara");
-dik.onclick = function(){
+document.getElementById("dispara").onclick = function(){
             console.log("loo");
-var elem = document.getElementsByClassName("plus");
-for(var i=0; i < elem.length; i++){
-    (function () {
-        var boxa = elem[i].parentNode.parentNode.parentNode.id;
-        elem[i].addEventListener("click", function(){makeItHappen(boxa);}, false);
-    }())
-    console.log("loop add event"+boxa)
-}
 
 };
 
