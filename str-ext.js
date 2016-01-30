@@ -44,8 +44,15 @@ document.getElementById("popup").innerHTML +=
 "<div id='"+keytrana+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' value='-'><input type='text' style='width:20px;background:yellow' name='name' value='"+fov+"' /><input type='button' value='+'></span></form></div>";
 nenem++
 
+    (function () {
 var keytrana2 = document.getElementById(keytrana);
 keytrana2.getElementsByTagName("input")[2].addEventListener("click", function() {makeith(keytrana2)});
+    }())
+    
+
+
+
+}
 
 function makeith(e){
             var value = parseInt(e.getElementsByTagName("input")[1].value);
@@ -53,11 +60,6 @@ function makeith(e){
     e.getElementsByTagName("input")[1].value = value;
         console.log(value);
 }
-
-
-}
-
-
 
 new MutationObserver(function (mutations) {
     mutations.some(function(mutation) {
