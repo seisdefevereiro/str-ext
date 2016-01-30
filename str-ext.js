@@ -42,7 +42,7 @@ var keytrana = 'cravo'+nenem;
 var keytrana2 = document.getElementById(keytrana);
 
 document.getElementById("popup").innerHTML += 
-"<div class='"+keytrana+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' id='minus' value='-'><input type='text' style='width:20px;background:yellow' id='textb' name='name' value='"+fov+"' /><input type='button' value='+' id='plus'></span></form></div>";
+"<div id='"+keytrana+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' id='minus' value='-'><input type='text' style='width:20px;background:yellow' id='textb' name='name' value='"+fov+"' /><input type='button' value='+' id='plus'></span></form></div>";
 nenem++
 
 keytrana2.getElementsByTagName("input")[0].addEventListener("click", function() {
