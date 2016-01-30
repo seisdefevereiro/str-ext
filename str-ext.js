@@ -46,11 +46,10 @@ var keytrana2 = document.getElementById(keytrana);
 keytrana2.getElementsByTagName("input")[2].addEventListener("click", function() {makeItHappenDelegate(keytrana2)});
 nenem++
 
-function makeItHappenDelegate(e) {
-  return function(){ makeItHappen(e) }
 }
 
-
+function makeItHappenDelegate(e) {
+  return function(){ makeith(e) }
 }
 
 function makeith(e){
@@ -59,6 +58,7 @@ function makeith(e){
     e.getElementsByTagName("input")[1].value = value;
         console.log(value);
 }
+
 
 new MutationObserver(function (mutations) {
     mutations.some(function(mutation) {
