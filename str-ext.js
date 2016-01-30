@@ -49,7 +49,7 @@ keytrana2.getElementsByTagName("input")[0].addEventListener("click", function() 
     var value = parseInt(keytrana2.getElementsByTagName("input")[1].value);
     value=value+1;
     keytrana2.getElementsByTagName("input")[1].value = value;
-    
+    console.log(value);
         var coorde2 = this.parentNode.getElementsByTagName('img')[0].src;
         var c4 = coorde2.indexOf('a,');
         var L4 = coorde2.indexOf('y,');
@@ -63,6 +63,7 @@ keytrana2.getElementsByTagName("input")[2].addEventListener("click", function() 
     var value = parseInt(keytrana2.getElementsByTagName("input")[1].value);
     value=value-1;
     keytrana2.getElementsByTagName("input")[1].value = value;
+        console.log(value);
 });
 
 
