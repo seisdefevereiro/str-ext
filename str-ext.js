@@ -45,26 +45,14 @@ document.getElementById("popup").innerHTML +=
 nenem++
 
 var keytrana2 = document.getElementById(keytrana);
-keytrana2.getElementsByTagName("input")[0].addEventListener("click", function() {
-    var value = parseInt(keytrana2.getElementsByTagName("input")[1].value);
-    value=value+1;
-    keytrana2.getElementsByTagName("input")[1].value = value;
-    console.log(value);
-        var coorde2 = this.parentNode.getElementsByTagName('img')[0].src;
-        var c4 = coorde2.indexOf('a,');
-        var L4 = coorde2.indexOf('y,');
-        var fov = coorde2.substring(c4+2,L4);
-        var str = coorde2.replace(fov, value+1);
-        this.parentNode.getElementsByTagName('img')[0].src=str;
-    
-});
+keytrana2.getElementsByTagName("input")[2].addEventListener("click", function() {makeith(keytrana2)});
 
-keytrana2.getElementsByTagName("input")[2].addEventListener("click", function() {
-    var value = parseInt(keytrana2.getElementsByTagName("input")[1].value);
+function makeith(e){
+            var value = parseInt(e.getElementsByTagName("input")[1].value);
     value=value-1;
-    keytrana2.getElementsByTagName("input")[1].value = value;
+    e.getElementsByTagName("input")[1].value = value;
         console.log(value);
-});
+}
 
 
 }
