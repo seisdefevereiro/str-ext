@@ -123,7 +123,7 @@ sendMouseDrag(element, dragPoints);
 
 function makeItHappenDelegate(e) {
   return function(){
-      makeItHappen(boxa)
+      makeItHappen(e)
   }
 }
 var j = 0;
