@@ -43,17 +43,14 @@ var keytrana = 'cravo'+nenem;
 document.getElementById("popup").innerHTML += "<div id='cravo"+nenem+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' value='-'><input type='text' style='width:20px;background:yellow' name='name' value='"+fov+"' /><input type='button' value='+'></span></form></div>";
 
 var keytrana2 = document.getElementById(keytrana);
-makeItHappenDelegate(keytrana2);
-
+keytrana2.getElementsByTagName("input")[2].addEventListener("click", function () { makeith(keytrana2);console.log(keytrana2) });
+console.log("aiai");
+console.log(keytrana2)
 nenem++
 
 }
 
-function makeItHappenDelegate(e) {
-e.getElementsByTagName("input")[2].addEventListener("click", function (e) {
-            return function() { makeith(e) }
-});
-}
+
 
 function makeith(e){
             var value = parseInt(e.getElementsByTagName("input")[1].value);
