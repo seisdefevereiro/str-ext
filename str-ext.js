@@ -41,16 +41,17 @@ var ll = coorde2.substring(c5+2,L5);
 
 var keytrana = 'cravo'+nenem;
 document.getElementById("popup").innerHTML += "<div id='cravo"+nenem+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' value='-'><input type='text' style='width:20px;background:yellow' name='name' value='"+fov+"' /><input type='button' value='+'></span></form></div>";
-    (function () {
+
 var keytrana2 = document.getElementById(keytrana);
 makeItHappenDelegate(keytrana2);
-    }())
+
 nenem++
 
 }
 
 function makeItHappenDelegate(e) {
-e.getElementsByTagName("input")[2].addEventListener("click", function() {makeith(e)});
+e.getElementsByTagName("input")[2].addEventListener("click", function (e) {
+            return function() {makeith(e)} }(); );
 }
 
 function makeith(e){
