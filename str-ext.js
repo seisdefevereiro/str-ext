@@ -41,7 +41,7 @@ var ll = coorde2.substring(c5+2,L5);
 var keytrana = 'cravo'+nenem;
 
 document.getElementById("popup").innerHTML += 
-"<div id='"+keytrana+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' value='-'><input type='text' style='width:20px;background:yellow' id='textb' name='name' value='"+fov+"' /><input type='button' value='+'></span></form></div>";
+"<div id='"+keytrana+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' value='-'><input type='text' style='width:20px;background:yellow' name='name' value='"+fov+"' /><input type='button' value='+'></span></form></div>";
 nenem++
 
 var keytrana2 = document.getElementById(keytrana);
