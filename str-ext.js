@@ -126,15 +126,13 @@ function makeItHappenDelegate(e) {
       makeItHappen(boxa)
   }
 }
-
+var j = 0;
 var elem = document.getElementsByClassName('minus');
-console.log(elem);
-for(var i=0; i < elem.length; i++){
-
-        var boxa = elem[i].parentNode.parentNode.parentNode.id;
+while(elem.length>j) {
+        var boxa = elem[j].parentNode.parentNode.parentNode.id;
         console.log(boxa);
-        elem[i].addEventListener("click", function(){makeItHappenDelegate(boxa);}, false);
-
+        elem[j].addEventListener("click", function(){makeItHappenDelegate(boxa);}, false);
+        j++
 }
 function makeItHappen(e){
         var block = document.getElementById(e);
