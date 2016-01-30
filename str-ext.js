@@ -127,8 +127,8 @@ sendMouseDrag(element, dragPoints);
 
 
 var dik = document.getElementById("dispara");
-dik.addEventListener("click", function(){
-        
+dik.onclick = function(){
+            console.log("loo");
 var elem = document.getElementsByClassName("plus");
 for(var i=0; i < elem.length; i++){
     (function () {
@@ -138,7 +138,7 @@ for(var i=0; i < elem.length; i++){
     console.log("loop add event"+boxa)
 }
 
-}, false);
+};
 
 
 
