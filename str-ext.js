@@ -51,7 +51,8 @@ nenem++
 
 function makeItHappenDelegate(e) {
 e.getElementsByTagName("input")[2].addEventListener("click", function (e) {
-            return function() {makeith(e)} }(); );
+            return function() { makeith(e) }
+});
 }
 
 function makeith(e){
