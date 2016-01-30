@@ -38,15 +38,15 @@ var fov = coorde2.substring(c4+2,L4);
 var c5 = coorde2.indexOf('/@');
 var L5 = coorde2.indexOf(',3a');
 var ll = coorde2.substring(c5+2,L5);
-                    
+var keytrana = 'cravo'+nenem;
 document.getElementById("popup").innerHTML += 
-"<div class='cravo' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' id='minus"+nenem+"' value='-'><input type='text' style='width:20px;background:yellow' id='textb"+nenem+"' name='name' value='"+fov+"' /><input type='button' value='+' id='plus"+nenem+"'></span></form></div>";
+"<div class='"+keytrana+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' id='minus' value='-'><input type='text' style='width:20px;background:yellow' id='textb' name='name' value='"+fov+"' /><input type='button' value='+' id='plus'></span></form></div>";
 nenem++
 
-document.getElementById("minus"+nenem).addEventListener("click", function() {
-    var value = parseInt(document.getElementById('textb').value);
+document.getElementById(keytrana).getElementsByTagName("input")[0].addEventListener("click", function() {
+    var value = parseInt(document.getElementById(keytrana).getElementsByTagName("input")[1].value);
     value=value+1;
-    document.getElementById('textb').value = value;
+    document.getElementById(keytrana).getElementsByTagName("input")[1].value = value;
     
         var coorde2 = this.parentNode.getElementsByTagName('img')[0].src;
         var c4 = coorde2.indexOf('a,');
@@ -57,10 +57,10 @@ document.getElementById("minus"+nenem).addEventListener("click", function() {
     
 });
 
-document.getElementById("plus"+nenem).addEventListener("click", function() {
-    var value = parseInt(document.getElementById('textb'+nenem).value);
+document.getElementById(keytrana).getElementsByTagName("input")[2].addEventListener("click", function() {
+    var value = parseInt(document.getElementById(keytrana).getElementsByTagName("input")[1].value);
     value=value-1;
-    document.getElementById('textb'+nenem).value = value;
+    document.getElementById(keytrana).getElementsByTagName("input")[1].value = value;
 });
 
 
