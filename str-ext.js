@@ -60,17 +60,13 @@ new MutationObserver(function (mutations) {
                 });
                 if (!found) {
                     versions.push(name);
-                    
-    coorde = name;
-loadimages();
-
-                    console.log(versions);
+                    coorde = name;
+                    loadimages();
                 }
             }
             add(mutation.target.src);
             return true;
         }
-
         return false;
     });
 }).observe(document.body, {
@@ -124,12 +120,13 @@ var element = document.getElementsByClassName("tactile-timemachine__scrubber")[0
 dispatchHTMLMouseEvent("mousedown", dragPoints[0], element);
 sendMouseDrag(element, dragPoints);
 
+
+
 var elem = document.getElementsByClassName('minus');
 for(var i=0; i < elem.length; i+=2){
     (function () {
-        var k = i - 1;
         var boxa = elem[i].parentNode.parentNode.parentNode.id;
-
+        console.log(boxa);
         elem[i].addEventListener("click", function(){makeItHappen(boxa);}, false);
     }())
 }
