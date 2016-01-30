@@ -42,29 +42,9 @@ var L5 = coorde2.indexOf(',3a');
 var ll = coorde2.substring(c5+2,L5);
 
 document.getElementById("popup").innerHTML += 
-"<div id='original"+nenem+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' value='-'><input type='text' style='width:20px;background:yellow' name='name' value='"+fov+"' /><input type='button' value='+'></span></form></div>";
+"<div id='original"+nenem+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' class='minus' value='-'><input type='text' style='width:20px;background:yellow' name='name' value='"+fov+"' /><input type='button' class='plus' value='+'></span></form></div>";
 
-window[original+nenem] = document.getElementById('original'+nenem);
-window[original+nenem].getElementsByTagName("input")[0].addEventListener("click", function() {
-    var value = parseInt(this.parentNode.getElementsByTagName("input")[1].value);
-    value=value+1;
-    this.parentNode.getElementsByTagName("input")[1].value = value;
-    console.log(value);
-        var coorde2 = this.parentNode.getElementsByTagName('img')[0].src;
-        var c4 = coorde2.indexOf('a,');
-        var L4 = coorde2.indexOf('y,');
-        var fov = coorde2.substring(c4+2,L4);
-        var str = coorde2.replace(fov, value+1);
-        this.parentNode.getElementsByTagName('img')[0].src=str;
-    
-});
 
-window[original+nenem].getElementsByTagName("input")[2].addEventListener("click", function() {
-    var value = parseInt(this.parentNode.getElementsByTagName("input")[1].value);
-    value=value-1;
-    this.parentNode.getElementsByTagName("input")[1].value = value;
-        console.log(value);
-});
 
 nenem++
 }
@@ -143,3 +123,19 @@ var i = 1;
 var element = document.getElementsByClassName("tactile-timemachine__scrubber")[0];
 dispatchHTMLMouseEvent("mousedown", dragPoints[0], element);
 sendMouseDrag(element, dragPoints);
+
+elem = document.getElementsByClassName('minus');
+for(var i=0; i < elem.length; i+=2){
+    (function () {
+        var k = i - 1;
+        var boxa = elem[i].parentNode.parentNode.parentNode.id;
+
+        elem[i].addEventListener("click", function(){makeItHappen(boxa);}, false);
+    }())
+}
+function makeItHappen(e){
+            var value = parseInt(e.getElementsByTagName("input")[1].value);
+    value=value-1;
+    e.getElementsByTagName("input")[1].value = value;
+        console.log(value);
+}
