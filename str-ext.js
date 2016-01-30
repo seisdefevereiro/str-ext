@@ -1,5 +1,7 @@
 var versions = [];
 var nenem = 1;
+var originaleee;
+var original = 'original';
 var imagem = document.getElementsByClassName("tactile-timemachine__preview-background-thumbnail")[0];
 var coorde = imagem.src;
 versions.push(coorde);
@@ -38,14 +40,12 @@ var fov = coorde2.substring(c4+2,L4);
 var c5 = coorde2.indexOf('/@');
 var L5 = coorde2.indexOf(',3a');
 var ll = coorde2.substring(c5+2,L5);
-var keytrana = 'cravo'+nenem;
 
 document.getElementById("popup").innerHTML += 
-"<div id='"+keytrana+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' value='-'><input type='text' style='width:20px;background:yellow' name='name' value='"+fov+"' /><input type='button' value='+'></span></form></div>";
+"<div id='original"+nenem+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' value='-'><input type='text' style='width:20px;background:yellow' name='name' value='"+fov+"' /><input type='button' value='+'></span></form></div>";
 
-
-var keytrana2 = document.getElementById(keytrana);
-keytrana2.getElementsByTagName("input")[0].addEventListener("click", function() {
+window[original+nenem] = document.getElementById('original'+nenem);
+window[original+nenem].getElementsByTagName("input")[0].addEventListener("click", function() {
     var value = parseInt(this.parentNode.getElementsByTagName("input")[1].value);
     value=value+1;
     this.parentNode.getElementsByTagName("input")[1].value = value;
@@ -59,7 +59,7 @@ keytrana2.getElementsByTagName("input")[0].addEventListener("click", function() 
     
 });
 
-keytrana2.getElementsByTagName("input")[2].addEventListener("click", function() {
+window[original+nenem].getElementsByTagName("input")[2].addEventListener("click", function() {
     var value = parseInt(this.parentNode.getElementsByTagName("input")[1].value);
     value=value-1;
     this.parentNode.getElementsByTagName("input")[1].value = value;
