@@ -40,11 +40,7 @@ var L5 = coorde2.indexOf(',3a');
 var ll = coorde2.substring(c5+2,L5);
                     
 document.getElementById("popup").innerHTML += 
-"<div class='cravo' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/>
-<form>fov:<span><input type='button' id='minus"+nenem+"' value='-'>
-<input type='text' style='width:20px;background:yellow' id='textb"+nenem+"' name='name' value='"+fov+"' />
-<input type='button' value='+' id='plus"+nenem+"'></span>
-</form></div>";
+"<div class='cravo' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' id='minus"+nenem+"' value='-'><input type='text' style='width:20px;background:yellow' id='textb"+nenem+"' name='name' value='"+fov+"' /><input type='button' value='+' id='plus"+nenem+"'></span></form></div>";
 nenem++
 
 document.getElementById("minus"+nenem).addEventListener("click", function() {
