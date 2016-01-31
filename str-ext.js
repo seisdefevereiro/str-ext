@@ -116,7 +116,7 @@ function makeItHappen(input,elem){
                 var str = coor.replace(fov, value);
                 play.getElementsByTagName('img')[0].src=str;
         } if (input.classList.contains("plus")) {
-                value=value-1;
+                value=value+1;
                 play.getElementsByTagName("input")[1].value = value;
                 var coor = play.getElementsByTagName('img')[0].src;
                 var c4 = coor.indexOf('v=');
