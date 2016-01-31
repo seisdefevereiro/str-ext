@@ -86,45 +86,47 @@ amen.innerHTML += "<div id='mirror' style='z-index:99999;top:0;right:0;left:0;wi
 
 amen.onclick = function(event) {
     if (event.target.id === 'dispara') {
-        var elem = document.getElementsByTagName("form");
+        var elem = document.getElementsByClassName("minus");
         for(var i=0; i < elem.length; i++){
                 (function () {
-                        var boxa = elem[i].parentNode.parentNode.id;
-                        var nadd = elem[i].getElementsByClassName("plus")[0];
-                        var nodd = elem[i].getElementsByClassName("minus")[0];
-                        nadd.addEventListener("click", function(){makeItHappen(boxa);}, false);
-                        nodd.addEventListener("click", function(){makeItHappen2(boxa);}, false);
+                        var boxa = elem[i].parentNode.parentNode.parentNode.id;
+                        elem[i].addEventListener("click", function(){makeItHappen(elem[i],boxa);}, false);
+                }())
+        }
+        var elem2 = document.getElementsByClassName("plus");
+        for(var i=0; i < elem.length; i++){
+                (function () {
+                        var boxb = elem[i].parentNode.parentNode.parentNode.id;
+                        elem[i].addEventListener("click", function(){makeItHappen(elem[i],boxb);}, false);
                 }())
         }
     }
 }
 
-function makeItHappen(elem){
+function makeItHappen(input,elem){
         var play = document.getElementById(elem);
-    var value = parseInt(play.getElementsByTagName("input")[1].value);
-    value=value+1;
-    play.getElementsByTagName("input")[1].value = value;
-
-        var coor = play.getElementsByTagName('img')[0].src;
-        var c4 = coor.indexOf('v=');
-        var L4 = coor.indexOf('&h');
-        var fov = coor.substring(c4+2,L4);
-        var str = coor.replace(fov, value);
-        play.getElementsByTagName('img')[0].src=str;
+        var value = parseInt(play.getElementsByTagName("input")[1].value);
+        if (input.classList.contains("minus")) {
+                value=value-1;
+                play.getElementsByTagName("input")[1].value = value;
+                var coor = play.getElementsByTagName('img')[0].src;
+                var c4 = coor.indexOf('v=');
+                var L4 = coor.indexOf('&h');
+                var fov = coor.substring(c4+2,L4);
+                var str = coor.replace(fov, value);
+                play.getElementsByTagName('img')[0].src=str;
+        } if (input.classList.contains("plus")) {
+                value=value-1;
+                play.getElementsByTagName("input")[1].value = value;
+                var coor = play.getElementsByTagName('img')[0].src;
+                var c4 = coor.indexOf('v=');
+                var L4 = coor.indexOf('&h');
+                var fov = coor.substring(c4+2,L4);
+                var str = coor.replace(fov, value);
+                play.getElementsByTagName('img')[0].src=str;
+        }
 }
-function makeItHappen2(elem){
-        var play = document.getElementById(elem);
-    var value = parseInt(play.getElementsByTagName("input")[1].value);
-    value=value-1;
-    play.getElementsByTagName("input")[1].value = value;
 
-        var coor = play.getElementsByTagName('img')[0].src;
-        var c4 = coor.indexOf('v=');
-        var L4 = coor.indexOf('&h');
-        var fov = coor.substring(c4+2,L4);
-        var str = coor.replace(fov, value);
-        play.getElementsByTagName('img')[0].src=str;
-}
 
 loadimages();
 
