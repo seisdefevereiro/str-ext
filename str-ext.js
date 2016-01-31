@@ -53,7 +53,7 @@ nenem++
 
 new MutationObserver(function (mutations) {
     mutations.some(function(mutation) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'src') {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'src' && !mutation.className === 'rosa') {
             function add(name) {
                 var found = versions.some(function (el) {
                     return el === name;
