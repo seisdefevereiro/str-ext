@@ -114,7 +114,10 @@ function makeItHappen(elem){
         var L4 = coorde2.indexOf('y,');
         var fov = coorde2.substring(c4+2,L4);
         var str = coorde2.replace(fov, value+1);
+        console.log(coorde2);
         play.getElementsByTagName('img')[0].src=str;
+        console.log(coorde2);
+        console.log(str);
 }
 
 
