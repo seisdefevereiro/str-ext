@@ -90,8 +90,8 @@ amen.onclick = function(event) {
         for(var i=0; i < elem.length; i++){
                 (function () {
                         var boxa = elem[i].parentNode.parentNode.id;
-                        elem[i].getElementsByClassName("plus").addEventListener("click", function(){makeItHappen(boxa);}, false);
-                        elem[i].getElementsByClassName("minus").addEventListener("click", function(){makeItHappen2(boxa);}, false);
+                        elem[i].getElementsByClassName("plus")[0].addEventListener("click", function(){makeItHappen(boxa);}, false);
+                        elem[i].getElementsByClassName("minus")[0].addEventListener("click", function(){makeItHappen2(boxa);}, false);
                 }())
         }
     }
