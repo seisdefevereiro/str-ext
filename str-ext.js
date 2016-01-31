@@ -161,13 +161,3 @@ dispatchHTMLMouseEvent("mousedown", dragPoints[0], element);
 sendMouseDrag(element, dragPoints);
 
 
-
-
-
-function makeItHappen(e){
-        var keytrana2 = document.getElementById(e);
-            var value = parseInt(keytrana2.getElementsByTagName("input")[1].value);
-    value=value+1;
-    keytrana2.getElementsByTagName("input")[1].value = value;
-        console.log(value);
-}
