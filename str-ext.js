@@ -109,14 +109,16 @@ function makeItHappen(elem){
     value=value+1;
     play.getElementsByTagName("input")[1].value = value;
         console.log(value);
-        var coorde2 = play.getElementsByTagName('img')[0].src;
-        var c4 = coorde2.indexOf('a,');
-        var L4 = coorde2.indexOf('y,');
-        var fov = coorde2.substring(c4+2,L4);
-        var str = coorde2.replace(fov, value+1);
-        console.log(coorde2);
+        var coor = play.getElementsByTagName('img')[0].src;
+        console.log(coor);
+        console.log(play.getElementsByTagName('img')[0].src);
+        var c4 = coor.indexOf('a,');
+        var L4 = coor.indexOf('y,');
+        var fov = coor.substring(c4+2,L4);
+        var str = coor.replace(fov, value+1);
+        console.log(coor);
         play.getElementsByTagName('img')[0].src=str;
-        console.log(coorde2);
+        console.log(coor);
         console.log(str);
 }
 
