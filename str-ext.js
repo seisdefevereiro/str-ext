@@ -88,7 +88,7 @@ amen.innerHTML += "<div id='mirror' style='z-index:99999;top:0;right:0;left:0;wi
 
 
 amen.onclick = function(event) {
-    if (event.target.id === 'popup') {
+    if (event.target.id === 'dispara') {
 console.log("uuuuu");
     }
 }
