@@ -106,9 +106,15 @@ for(var i=0; i < elem.length; i++){
 function makeItHappen(elem){
         var play = document.getElementById(elem);
     var value = parseInt(play.getElementsByTagName("input")[1].value);
-    value=value-1;
+    value=value+1;
     play.getElementsByTagName("input")[1].value = value;
         console.log(value);
+        var coorde2 = play.getElementsByTagName('img')[0].src;
+        var c4 = coorde2.indexOf('a,');
+        var L4 = coorde2.indexOf('y,');
+        var fov = coorde2.substring(c4+2,L4);
+        var str = coorde2.replace(fov, value+1);
+        play.getElementsByTagName('img')[0].src=str;
 }
 
 
