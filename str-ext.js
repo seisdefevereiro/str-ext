@@ -95,11 +95,11 @@ amen.onclick = function(event) {
                 }())
         }
         var elem2 = document.getElementsByClassName("plus");
-        for(var i=0; i < elem.length; i++){
+        for(var i=0; i < elem2.length; i++){
                 (function () {
-                        var boxb = elem[i].parentNode.parentNode.parentNode.id;
-                        var inp = elem[i].className;
-                        elem[i].addEventListener("click", function(){makeItHappen(inp,boxb);}, false);
+                        var boxb = elem2[i].parentNode.parentNode.parentNode.id;
+                        var inp = elem2[i].className;
+                        elem2[i].addEventListener("click", function(){makeItHappen(inp,boxb);}, false);
                 }())
         }
     }
