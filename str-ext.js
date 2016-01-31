@@ -89,10 +89,27 @@ amen.innerHTML += "<div id='mirror' style='z-index:99999;top:0;right:0;left:0;wi
 
 amen.onclick = function(event) {
     if (event.target.id === 'dispara') {
+            
 console.log("uuuuu");
+var elem = document.getElementsByClassName("plus");
+for(var i=0; i < elem.length; i++){
+    (function () {
+            console.log("money");
+        var boxa = elem[i].parentNode.parentNode.parentNode.id;
+        elem[i].addEventListener("click", function(){makeItHappen(boxa);}, false);
+    }())
+}
+
     }
 }
 
+function makeItHappen(elem){
+        var play = document.getElementById(elem);
+    var value = parseInt(play.getElementsByTagName("input")[1].value);
+    value=value-1;
+    play.getElementsByTagName("input")[1].value = value;
+        console.log(value);
+}
 
 
 loadimages();
