@@ -40,7 +40,7 @@ var L5 = coorde2.indexOf(',3a');
 var ll = coorde2.substring(c5+2,L5);
 
 
-document.getElementById("popup").innerHTML += "<div id='cravo"+nenem+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' value='-'><input type='text' style='width:20px;background:yellow' name='name' value='"+fov+"' /><input type='button' class='plus' value='+'></span></form></div>";
+document.getElementById("popup").innerHTML += "<div id='cravo"+nenem+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' value='-' class='minus'><input type='text' style='width:20px;background:yellow' name='name' value='"+fov+"' /><input type='button' class='plus' value='+'></span></form></div>";
 
 
 nenem++
@@ -86,17 +86,14 @@ amen.innerHTML += "<div id='mirror' style='z-index:99999;top:0;right:0;left:0;wi
 
 amen.onclick = function(event) {
     if (event.target.id === 'dispara') {
-            
-console.log("uuuuu");
-var elem = document.getElementsByClassName("plus");
-for(var i=0; i < elem.length; i++){
-    (function () {
-            console.log("money");
-        var boxa = elem[i].parentNode.parentNode.parentNode.id;
-        elem[i].addEventListener("click", function(){makeItHappen(boxa);}, false);
-    }())
-}
-
+        var elem = document.getElementsByTagName("form");
+        for(var i=0; i < elem.length; i++){
+                (function () {
+                        var boxa = elem[i].parentNode.parentNode.id;
+                        elem[i].getElementsByClassName("plus").addEventListener("click", function(){makeItHappen(boxa);}, false);
+                        elem[i].getElementsByClassName("minus").addEventListener("click", function(){makeItHappen2(boxa);}, false);
+                }())
+        }
     }
 }
 
@@ -105,20 +102,27 @@ function makeItHappen(elem){
     var value = parseInt(play.getElementsByTagName("input")[1].value);
     value=value+1;
     play.getElementsByTagName("input")[1].value = value;
-        console.log(value);
-        var coor = play.getElementsByTagName('img')[0].src;
-        console.log(coor);
-        console.log(play.getElementsByTagName('img')[0].src);
-        var c4 = coor.indexOf('a,');
-        var L4 = coor.indexOf('y,');
-        var fov = coor.substring(c4+2,L4);
-        var str = coor.replace(fov, value+1);
-        console.log(coor);
-        play.getElementsByTagName('img')[0].src=str;
-        console.log(coor);
-        console.log(str);
-}
 
+        var coor = play.getElementsByTagName('img')[0].src;
+        var c4 = coor.indexOf('v=');
+        var L4 = coor.indexOf('&h');
+        var fov = coor.substring(c4+2,L4);
+        var str = coor.replace(fov, value);
+        play.getElementsByTagName('img')[0].src=str;
+}
+function makeItHappen2(elem){
+        var play = document.getElementById(elem);
+    var value = parseInt(play.getElementsByTagName("input")[1].value);
+    value=value-1;
+    play.getElementsByTagName("input")[1].value = value;
+
+        var coor = play.getElementsByTagName('img')[0].src;
+        var c4 = coor.indexOf('v=');
+        var L4 = coor.indexOf('&h');
+        var fov = coor.substring(c4+2,L4);
+        var str = coor.replace(fov, value);
+        play.getElementsByTagName('img')[0].src=str;
+}
 
 loadimages();
 
