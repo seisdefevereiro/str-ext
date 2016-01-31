@@ -125,14 +125,13 @@ dispatchHTMLMouseEvent("mousedown", dragPoints[0], element);
 sendMouseDrag(element, dragPoints);
 
 
-prepareButton();
-function prepareButton() {
+
+var prepareButton = function() {
 document.getElementById("dispara").onclick = function(){
             console.log("loo");
-
 };
 }
-
+prepareButton();
 
 
 function makeItHappen(e){
