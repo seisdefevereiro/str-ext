@@ -2,7 +2,7 @@ var versions = [];
 var nenem = 1;
 var imagem = document.getElementsByClassName("tactile-timemachine__preview-background-thumbnail")[0];
 var dia = document.getElementsByClassName("tactile-timemachine__date")[0];
-var ocasiao = dia.getElementsByTagName("span")[1];
+var ocasiao = dia.getElementsByTagName("span")[2];
 var diad = ocasiao.innerHTML;
 var coorde = imagem.src;
 versions.push(coorde);
