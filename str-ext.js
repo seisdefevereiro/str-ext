@@ -1,6 +1,7 @@
 var versions = [];
 var nenem = 1;
 var imagem = document.getElementsByClassName("tactile-timemachine__preview-background-thumbnail")[0];
+var dia = document.getElementsByClassName("tactile-timemachine__date")[0];
 var coorde = imagem.src;
 versions.push(coorde);
 
@@ -39,8 +40,8 @@ var c5 = coorde2.indexOf('/@');
 var L5 = coorde2.indexOf(',3a');
 var ll = coorde2.substring(c5+2,L5);
 
-
-document.getElementById("popup").innerHTML += "<div id='cravo"+nenem+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><form>fov:<span><input type='button' value='-' class='minus'><input type='text' style='width:30px;background:yellow' name='name' value='"+fov+"' /><input type='button' class='plus' value='+'></span></form></div>";
+var ocasiao = dia.getElementsByTagName("span")[1].innerHTML;
+document.getElementById("popup").innerHTML += "<div id='cravo"+nenem+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><span>"+ocasiao+"</span><form>fov:<span><input type='button' value='-' class='minus'><input type='text' style='width:30px;background:yellow' name='name' value='"+fov+"' /><input type='button' class='plus' value='+'></span></form></div>";
 
 
 nenem++
