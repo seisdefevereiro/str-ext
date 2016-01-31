@@ -90,23 +90,25 @@ amen.onclick = function(event) {
         for(var i=0; i < elem.length; i++){
                 (function () {
                         var boxa = elem[i].parentNode.parentNode.parentNode.id;
-                        elem[i].addEventListener("click", function(){makeItHappen(elem[i],boxa);}, false);
+                        var inpb = elem[i].className;
+                        elem[i].addEventListener("click", function(){makeItHappen(inpb,boxa);}, false);
                 }())
         }
         var elem2 = document.getElementsByClassName("plus");
         for(var i=0; i < elem.length; i++){
                 (function () {
                         var boxb = elem[i].parentNode.parentNode.parentNode.id;
-                        elem[i].addEventListener("click", function(){makeItHappen(elem[i],boxb);}, false);
+                        var inp = elem[i].className;
+                        elem[i].addEventListener("click", function(){makeItHappen(inp,boxb);}, false);
                 }())
         }
     }
 }
 
-function makeItHappen(input,elem){
+function makeItHappen(inp,elem){
         var play = document.getElementById(elem);
         var value = parseInt(play.getElementsByTagName("input")[1].value);
-        if (input.classList.contains("minus")) {
+        if (inp === 'minus') {
                 value=value-1;
                 play.getElementsByTagName("input")[1].value = value;
                 var coor = play.getElementsByTagName('img')[0].src;
@@ -115,7 +117,7 @@ function makeItHappen(input,elem){
                 var fov = coor.substring(c4+2,L4);
                 var str = coor.replace(fov, value);
                 play.getElementsByTagName('img')[0].src=str;
-        } if (input.classList.contains("plus")) {
+        } if (inp === 'plus') {
                 value=value+1;
                 play.getElementsByTagName("input")[1].value = value;
                 var coor = play.getElementsByTagName('img')[0].src;
