@@ -109,7 +109,7 @@ function makeItHappen(inp,elem){
         var play = document.getElementById(elem);
         var value = parseInt(play.getElementsByTagName("input")[1].value);
         if (inp === 'minus') {
-                value=value-1;
+                value=value-40;
                 play.getElementsByTagName("input")[1].value = value;
                 var coor = play.getElementsByTagName('img')[0].src;
                 var c4 = coor.indexOf('v=');
@@ -118,7 +118,7 @@ function makeItHappen(inp,elem){
                 var str = coor.replace(fov, value);
                 play.getElementsByTagName('img')[0].src=str;
         } if (inp === 'plus') {
-                value=value+1;
+                value=value+40;
                 play.getElementsByTagName("input")[1].value = value;
                 var coor = play.getElementsByTagName('img')[0].src;
                 var c4 = coor.indexOf('v=');
