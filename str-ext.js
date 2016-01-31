@@ -53,18 +53,15 @@ nenem++
 
 new MutationObserver(function (mutations) {
     mutations.some(function(mutation) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'src' && !mutation.className === 'rosa') {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'src' && !mutation.target.classList.contains('rosa')) {
             function add(name) {
                 var found = versions.some(function (el) {
                     return el === name;
                 });
                 if (!found) {
                     versions.push(name);
-                    
-    coorde = name;
-loadimages();
-
-                    console.log(versions);
+                    coorde = name;
+                    loadimages();
                 }
             }
             add(mutation.target.src);
