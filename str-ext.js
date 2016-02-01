@@ -3,10 +3,10 @@ var nenem = 1;
 var imagem = document.getElementsByClassName("tactile-timemachine__preview-background-thumbnail")[0];
 var dia = document.getElementsByClassName("tactile-timemachine__date")[0];
 var ocasiao = dia.getElementsByTagName("span")[2];
-var diad = ocasiao.innerHTML;
+
 var coorde = imagem.src;
 versions.push(coorde);
-ocasiao.style.display = "block";
+
 if (document.getElementsByClassName("tactile-timemachine__dropdown-container")[0].style.display === 'none') {
 var evt = new MouseEvent("click", {
         view: window,
@@ -42,7 +42,7 @@ var c5 = coorde2.indexOf('/@');
 var L5 = coorde2.indexOf(',3a');
 var ll = coorde2.substring(c5+2,L5);
 
-
+var diad = ocasiao.innerHTML;
 document.getElementById("popup").innerHTML += "<div id='cravo"+nenem+"' style='margin:70px;display:inline-block'><img class='rosa' style='' src='//maps.googleapis.com/maps/api/streetview?size=450x640&location="+ll+"&fov="+fov+"&heading="+heading+"&pitch="+pitch+"&pano="+pano+"'/><span>"+diad+"</span><form>fov:<span><input type='button' value='-' class='minus'><input type='text' style='width:30px;background:yellow' name='name' value='"+fov+"' /><input type='button' class='plus' value='+'></span></form></div>";
 
 
@@ -51,33 +51,7 @@ nenem++
 }
 
 
-  var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
-  var list = document.querySelector('div.tactile-timemachine__date span span span');
-  
-  var observer = new MutationObserver(function(mutations) {  
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'childList') {
-        var list_values = [].slice.call(list.children)
-            .map( function(node) { return node.innerHTML; })
-            .filter( function(s) {
-              if (s === '<br>') {
-                return false;
-              }
-              else {
-                return true;
-              }
-         });
-        console.log(mutation.target.innerHTML);
-      }
-    });
-  });
-  
-  observer.observe(list, {
-  	attributes: true, 
-  	childList: true, 
-  	characterData: true
-  });
-
+ 
 
 new MutationObserver(function (mutations) {
     mutations.some(function(mutation) {
