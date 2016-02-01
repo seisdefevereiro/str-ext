@@ -6,7 +6,7 @@ var ocasiao = dia.getElementsByTagName("span")[2];
 var diad = ocasiao.innerHTML;
 var coorde = imagem.src;
 versions.push(coorde);
-
+ocasiao.style.display = "block";
 if (document.getElementsByClassName("tactile-timemachine__dropdown-container")[0].style.display === 'none') {
 var evt = new MouseEvent("click", {
         view: window,
