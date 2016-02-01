@@ -67,7 +67,7 @@ nenem++
                 return true;
               }
          });
-        console.log(list_values);
+        console.log(mutation.target.innerHTML);
       }
     });
   });
