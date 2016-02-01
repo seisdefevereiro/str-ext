@@ -51,7 +51,32 @@ nenem++
 }
 
 
-
+  var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+  var list = document.querySelector('div.tactile-timemachine__date span span');
+  
+  var observer = new MutationObserver(function(mutations) {  
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'childList') {
+        var list_values = [].slice.call(list.children)
+            .map( function(node) { return node.innerHTML; })
+            .filter( function(s) {
+              if (s === '<br>') {
+                return false;
+              }
+              else {
+                return true;
+              }
+         });
+        console.log(list_values);
+      }
+    });
+  });
+  
+  observer.observe(list, {
+  	attributes: true, 
+  	childList: true, 
+  	characterData: true
+  });
 
 
 new MutationObserver(function (mutations) {
