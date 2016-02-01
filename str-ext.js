@@ -104,8 +104,8 @@ amen.onclick = function(event) {
                         elem2[i].addEventListener("click", function(){makeItHappen(inp,boxb);}, false);
                 }())
         }
-    }
-    
+        
+
 var w = document.getElementById("popup").innerWidth;
 var h = document.getElementById("popup").innerHeight;
        var canvas = document.getElementById("tela"),
@@ -193,8 +193,11 @@ var h = document.getElementById("popup").innerHeight;
 
             }
         }
-    
-    
+        
+        
+        
+        
+    }
 }
 
 function makeItHappen(inp,elem){
