@@ -105,6 +105,73 @@ amen.onclick = function(event) {
                 }())
         }
         
+    }
+}
+
+function makeItHappen(inp,elem){
+        var play = document.getElementById(elem);
+        var value = parseInt(play.getElementsByTagName("input")[1].value);
+        if (inp === 'minus') {
+                value=value-40;
+                play.getElementsByTagName("input")[1].value = value;
+                var coor = play.getElementsByTagName('img')[0].src;
+                var c4 = coor.indexOf('v=');
+                var L4 = coor.indexOf('&h');
+                var fov = coor.substring(c4+2,L4);
+                var str = coor.replace(fov, value);
+                play.getElementsByTagName('img')[0].src=str;
+        } if (inp === 'plus') {
+                value=value+40;
+                play.getElementsByTagName("input")[1].value = value;
+                var coor = play.getElementsByTagName('img')[0].src;
+                var c4 = coor.indexOf('v=');
+                var L4 = coor.indexOf('&h');
+                var fov = coor.substring(c4+2,L4);
+                var str = coor.replace(fov, value);
+                play.getElementsByTagName('img')[0].src=str;
+        }
+}
+
+
+loadimages();
+
+var dragPoints = [];
+var i = 1;
+while (i<250) {
+dragPoints.push([i,10,i,10]);
+i++
+} while (i>-249) {
+dragPoints.push([i,10,i,10]);
+i--
+}
+
+var sendMouseDrag = function(element, dragPoints) {
+    dispatchHTMLMouseEvent("mousemove", dragPoints[i], element);
+    i++;
+    if(i < dragPoints.length-1) {
+      setTimeout(function() {
+          sendMouseDrag(element, dragPoints);
+      }, 1);
+    } else {
+        dispatchHTMLMouseEvent("mouseup", dragPoints[i], element);
+
+    }
+};
+
+var dispatchHTMLMouseEvent = function(mouseEventType, coords, target) {
+    var evt = document.createEvent("MouseEvents");
+    evt.initMouseEvent(mouseEventType, true, true, window, 0,
+    coords[0], coords[1], coords[2], coords[3], false, false, false, false, 0, null);
+    target.dispatchEvent(evt);
+};
+
+var i = 1;
+var element = document.getElementsByClassName("tactile-timemachine__scrubber")[0];
+dispatchHTMLMouseEvent("mousedown", dragPoints[0], element);
+sendMouseDrag(element, dragPoints);
+
+
+
 
 var w = document.getElementById("popup").innerWidth;
 var h = document.getElementById("popup").innerHeight;
@@ -193,75 +260,3 @@ var h = document.getElementById("popup").innerHeight;
 
             }
         }
-        
-        
-        
-        
-    }
-}
-
-function makeItHappen(inp,elem){
-        var play = document.getElementById(elem);
-        var value = parseInt(play.getElementsByTagName("input")[1].value);
-        if (inp === 'minus') {
-                value=value-40;
-                play.getElementsByTagName("input")[1].value = value;
-                var coor = play.getElementsByTagName('img')[0].src;
-                var c4 = coor.indexOf('v=');
-                var L4 = coor.indexOf('&h');
-                var fov = coor.substring(c4+2,L4);
-                var str = coor.replace(fov, value);
-                play.getElementsByTagName('img')[0].src=str;
-        } if (inp === 'plus') {
-                value=value+40;
-                play.getElementsByTagName("input")[1].value = value;
-                var coor = play.getElementsByTagName('img')[0].src;
-                var c4 = coor.indexOf('v=');
-                var L4 = coor.indexOf('&h');
-                var fov = coor.substring(c4+2,L4);
-                var str = coor.replace(fov, value);
-                play.getElementsByTagName('img')[0].src=str;
-        }
-}
-
-
-loadimages();
-
-var dragPoints = [];
-var i = 1;
-while (i<250) {
-dragPoints.push([i,10,i,10]);
-i++
-} while (i>-249) {
-dragPoints.push([i,10,i,10]);
-i--
-}
-
-var sendMouseDrag = function(element, dragPoints) {
-    dispatchHTMLMouseEvent("mousemove", dragPoints[i], element);
-    i++;
-    if(i < dragPoints.length-1) {
-      setTimeout(function() {
-          sendMouseDrag(element, dragPoints);
-      }, 1);
-    } else {
-        dispatchHTMLMouseEvent("mouseup", dragPoints[i], element);
-
-    }
-};
-
-var dispatchHTMLMouseEvent = function(mouseEventType, coords, target) {
-    var evt = document.createEvent("MouseEvents");
-    evt.initMouseEvent(mouseEventType, true, true, window, 0,
-    coords[0], coords[1], coords[2], coords[3], false, false, false, false, 0, null);
-    target.dispatchEvent(evt);
-};
-
-var i = 1;
-var element = document.getElementsByClassName("tactile-timemachine__scrubber")[0];
-dispatchHTMLMouseEvent("mousedown", dragPoints[0], element);
-sendMouseDrag(element, dragPoints);
-
-
-
-
